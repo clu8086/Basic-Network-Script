@@ -5,7 +5,7 @@ import os
 import datetime
 import threading
 
-dslams_list = open("ne.txt", "r")
+dslams_list = open("ne_list.txt", "r")
 dslams_list.seek(0)
 dslams = dslams_list.readlines()
 
