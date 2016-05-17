@@ -17,8 +17,8 @@ def open_telnet_conn(ip, dslam_name):
     #Change exception message
     try:
         #Define telnet parameters
-        username = 'dnoc_bo@glasoperator.net'
-        password = 'ajeiEmWFLSC3EI5'
+        username = 'username'
+        password = 'password'
      
         connection_timeout = 5
         reading_timeout = 5
@@ -36,19 +36,7 @@ def open_telnet_conn(ip, dslam_name):
 	#####################
 	#####################
 	connection.write("\n")      
-        connection.write("enable\n")
-        time.sleep(2)
-        connection.write("display board 0\n")
-        connection.write("\n")
-        time.sleep(2)
-	connection.write("display sysuptime\n")
-        connection.write("\n")
-        time.sleep(2)
-        connection.write("display resource occupancy cpu\n")
-        connection.write("\n")
-        time.sleep(2)
-	connection.write("display resource occupancy mem\n")
-        connection.write("\n")
+        connection.write("###commands###\n")
         time.sleep(2)
  	#####################
 	#####################
