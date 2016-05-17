@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir $(date +%F)
-X=`wc -l dslams.txt | awk '{print $1}'`;
+X=`wc -l ne_list.txt | awk '{print $1}'`;
 for ((i=1; i<=X; i++))
 do
    IP=`sed -n "$i"p < dslams.txt | awk '{print $2}'`
