@@ -4,8 +4,8 @@ mkdir $(date +%F)
 X=`wc -l ne_list.txt | awk '{print $1}'`;
 for ((i=1; i<=X; i++))
 do
-   IP=`sed -n "$i"p < dslams.txt | awk '{print $2}'`
-   DSLAM=`sed -n "$i"p < dslams.txt | awk '{print $1}'`
+   IP=`sed -n "$i"p < ne_list.txt | awk '{print $2}'`
+   DSLAM=`sed -n "$i"p < ne_list.txt | awk '{print $1}'`
    
    echo $IP
    echo $DSLAM
