@@ -1,0 +1,31 @@
+#!/bin/perl
+use strict;
+use warnings;
+use Net::Telnet;
+
+my $dslam = $ARGV[0];
+my $IP   = $ARGV[1];
+my $F    = $ARGV[2];
+my $tn = new Net::Telnet(Timeout=>15, Input_log => "$F/$dslam", Output_log => "output.log");
+$tn->open($IP);
+$tn->waitfor('/\:/i');
+$tn->print('root');
+$tn->waitfor('/\:/i');
+$tn->print('admin');
+$tn->waitfor('/\>/i');
+$tn->print('enable');
+$tn->waitfor('/\#/i');
+$tn->print('display board 0');
+$tn->print(' ');
+$tn->waitfor('/\#/i');
+$tn->print('display resource occupancy mem');
+$tn->waitfor('/\#/i');
+$tn->print('display resource occupancy cpu');
+$tn->waitfor('/\#/i');
+$tn->print('display data sync state');
+$tn->waitfor('/\#/i');
+$tn->print('display patch all');
+$tn->waitfor('/\#/i');
+$tn->print(' ');
+$tn->waitfor('/\#/i');
+$tn->close();
