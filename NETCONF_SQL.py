@@ -9,7 +9,6 @@ from ncclient import manager
 from ncclient import operations
 
 log = logging.getLogger(__name__)
-#ne_list = open("AG_ISIS_Noduri_25-09-2019.txt", "r")
 ne_list = open("AG_ISIS_Noduri_25-09-2019.txt", "r")
 ne_list.seek(0)
 nes = ne_list.readlines()
